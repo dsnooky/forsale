@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Real Estate Website</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b1120;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#9ca3af;
+  --accent:#22c55e;
+}
+body.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0b1120;
+  --muted:#475569;
+  --accent:#16a34a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+
+/* Toggle */
+.toggle{
+  position:fixed;
+  top:15px;
+  right:15px;
+  padding:8px 14px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  z-index:999;
+}
+
+/* HERO */
+header{
+  min-height:100vh;
+  padding:60px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1568605114967-8130f3a36994') center/cover;
+}
+
+header h1{
+  font-size:2.8rem;
+  margin-bottom:15px;
+}
+
+header p{
+  max-width:650px;
+  margin:auto;
+  color:#e5e7eb;
+}
+
+.cta a{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 36px;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  text-decoration:none;
+  border-radius:30px;
+}
+
+/* SECTION */
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:2.2rem;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.card h3{
+  margin-bottom:5px;
+}
+
+.price{
+  color:var(--accent);
+  font-weight:700;
+  margin:10px 0;
+}
+
+/* AGENT */
+.agent{
+  text-align:center;
+}
+
+.agent img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  margin-bottom:15px;
+}
+
+/* FORM */
+form{
+  max-width:600px;
+  margin:auto;
+  display:grid;
+  gap:15px;
+}
+
+input,textarea{
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-family:Poppins;
+}
+
+button{
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  background:var(--accent);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+
+<!-- HERO -->
+<header>
+  <div data-aos="fade-up">
+    <h1>Find Your Dream Home</h1>
+    <p>Browse premium properties for sale and rent in top locations.</p>
+    <div class="cta">
+      <a href="#listings">View Properties</a>
+    </div>
+  </div>
+</header>
+
+<!-- LISTINGS -->
+<section id="listings">
+  <div class="section-title">
+    <h2>Featured Properties</h2>
+    <p>Handpicked listings just for you</p>
+  </div>
+
+  <div class="grid">
+    <div class="card" data-aos="fade-up">
+      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
+      <div class="card-content">
+        <h3>Modern Family Home</h3>
+        <div class="price">₱5,200,000</div>
+        <p>3 Beds • 2 Baths • 120 sqm</p>
+      </div>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+      <div class="card-content">
+        <h3>Luxury Villa</h3>
+        <div class="price">₱12,500,000</div>
+        <p>5 Beds • Pool • Garage</p>
+      </div>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://images.unsplash.com/photo-1599423300746-b62533397364">
+      <div class="card-content">
+        <h3>City Condo</h3>
+        <div class="price">₱3,100,000</div>
+        <p>2 Beds • City View</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENT -->
+<section>
+  <div class="section-title">
+    <h2>Meet Our Agent</h2>
+    <p>Professional & trusted service</p>
+  </div>
+
+  <div class="agent" data-aos="zoom-in">
+    <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe">
+    <h3>John Dela Cruz</h3>
+    <p>Licensed Real Estate Broker</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="section-title">
+    <h2>Get in Touch</h2>
+    <p>Request a property viewing</p>
+  </div>
+
+  <form data-aos="fade-up">
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email Address" required>
+    <textarea rows="5" placeholder="Message"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Real Estate Template • Part of Mega Website Template Pack</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:900,once:true});
+function toggleMode(){
+  document.body.classList.toggle('light');
+}
+</script>
+
+</body>
+</html>
