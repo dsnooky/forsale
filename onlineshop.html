@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Shop Website</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --accent:#22c55e;
+}
+body.light{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --accent:#16a34a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:Poppins,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:.3s;
+}
+
+/* Toggle */
+.toggle{
+  position:fixed;
+  top:15px;
+  right:15px;
+  padding:8px 14px;
+  border-radius:20px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  z-index:999;
+}
+
+/* HERO */
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  background:
+    radial-gradient(circle at top,rgba(34,197,94,.25),transparent 40%),
+    linear-gradient(135deg,#020617,#0f172a);
+}
+
+header h1{
+  font-size:2.8rem;
+  margin-bottom:15px;
+}
+
+header p{
+  max-width:650px;
+  margin:auto;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+.cta{
+  margin-top:30px;
+}
+
+.cta a{
+  display:inline-block;
+  padding:14px 32px;
+  background:var(--accent);
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  border-radius:30px;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-size:2.2rem;
+}
+
+.section-title p{
+  color:var(--muted);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:var(--card);
+  padding:25px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+.price{
+  font-weight:700;
+  font-size:1.2rem;
+  margin:10px 0;
+  color:var(--accent);
+}
+
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  text-decoration:none;
+  font-weight:600;
+  color:white;
+  background:var(--accent);
+  padding:10px 18px;
+  border-radius:20px;
+}
+
+/* FEATURES */
+.features{
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  border-radius:25px;
+  color:white;
+}
+
+/* CONTACT */
+form{
+  max-width:600px;
+  margin:auto;
+  display:grid;
+  gap:15px;
+}
+
+input,textarea{
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-family:Poppins;
+}
+
+button{
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  font-weight:700;
+  cursor:pointer;
+  background:var(--accent);
+  color:white;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--muted);
+  font-size:.9rem;
+}
+</style>
+</head>
+
+<body>
+
+<button class="toggle" onclick="toggleMode()">🌙 / ☀️</button>
+
+<!-- HERO -->
+<header>
+  <div data-aos="fade-up">
+    <h1>Launch Your Online Shop Today</h1>
+    <p>Sell products online with a clean, mobile-friendly, and conversion-focused website.</p>
+    <div class="cta">
+      <a href="#products">Shop Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-title">
+    <h2>Featured Products</h2>
+    <p>Simple product layout that converts</p>
+  </div>
+
+  <div class="grid">
+    <div class="card" data-aos="fade-up">
+      <img src="https://picsum.photos/400/300?1" alt="">
+      <h3>Product One</h3>
+      <p>High-quality product description.</p>
+      <div class="price">₱999</div>
+      <a href="#">Buy Now</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+      <img src="https://picsum.photos/400/300?2" alt="">
+      <h3>Product Two</h3>
+      <p>Best seller item for your shop.</p>
+      <div class="price">₱1,499</div>
+      <a href="#">Buy Now</a>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://picsum.photos/400/300?3" alt="">
+      <h3>Product Three</h3>
+      <p>Limited stock available.</p>
+      <div class="price">₱2,499</div>
+      <a href="#">Buy Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-title">
+    <h2>Why Choose This Shop?</h2>
+    <p>Built for small businesses and online sellers</p>
+  </div>
+
+  <div class="grid">
+    <div class="card" data-aos="zoom-in">Mobile-First Design</div>
+    <div class="card" data-aos="zoom-in">Fast Loading</div>
+    <div class="card" data-aos="zoom-in">Easy to Customize</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="section-title">
+    <h2>Order or Inquire</h2>
+    <p>Send us a message to place an order</p>
+  </div>
+
+  <form data-aos="fade-up">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send Inquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Online Shop Template • Part of Mega Website Template Pack</p>
+</footer>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({duration:800,once:true});
+function toggleMode(){
+  document.body.classList.toggle('light');
+}
+</script>
+
+</body>
+</html>
